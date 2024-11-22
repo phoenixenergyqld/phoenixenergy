@@ -1,0 +1,91 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff; /* Alice Blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#chatbot {
+  width: 350px;
+  height: 500px;
+  background-color: #ffffff; /* White background for chatbot */
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#chat-header {
+  background-color: #007bff; /* Bright Blue header */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+}
+
+#chat-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.user {
+  background-color: #d0e7ff; /* Light blue for user messages */
+  align-self: flex-end;
+  color: #003d80; /* Darker blue text for user */
+}
+
+.bot {
+  background-color: #e9ecef; /* Light gray for bot messages */
+  align-self: flex-start;
+  color: #007bff; /* Blue text for bot */
+}
+
+#chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #f8f9fa;
+}
+
+#user-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #007bff; /* Blue border for input */
+  border-radius: 5px;
+}
+
+#send-button {
+  background-color: #007bff; /* Blue button */
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

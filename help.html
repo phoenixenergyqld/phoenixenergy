@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot</title>
+    <style>
+      /* General Styles */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ddd;
+        background-color: white;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar .nav-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar .nav-links li {
+        margin-left: 20px;
+      }
+
+      .navbar .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      .navbar .nav-links a:hover {
+        color: #007bff;
+      }
+
+      /* Chatbot Styles */
+      #chatbot {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transform: scale(0); /* Start with hidden scale */
+        opacity: 0;
+        animation: fadeInScale 0.8s forwards; /* Animation to show */
+      }
+
+      /* Fade and Scale Animation */
+      @keyframes fadeInScale {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      #chat-header {
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer; /* Allow click to toggle height */
+      }
+
+      #chat-body {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        height: 0; /* Initially hidden */
+        transition: height 0.5s ease; /* Smooth height transition */
+      }
+
+      #chat-body.active {
+        height: 300px; /* Expand height when active */
+      }
+
+      #chat-messages {
+        margin: 0;
+        padding: 0;
+      }
+
+      #chat-input {
+        display: flex;
+        border-top: 1px solid #ddd;
+        padding: 10px;
+      }
+
+      #user-input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+      }
+
+      #send-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      #send-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <img src="images/company logo.png" alt="Company Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="careers.html">career</a></li>
+          <li><a href="help.html">Help</a></li>
+          <li><a href="signin.html">Sign In/SignUp</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div id="chatbot">
+      <div id="chat-header">
+        <h3>AI Chatbot</h3>
+      </div>
+      <div id="chat-body">
+        <div id="chat-messages"></div>
+      </div>
+      <div id="chat-input">
+        <input type="text" id="user-input" placeholder="Ask me anything..." />
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

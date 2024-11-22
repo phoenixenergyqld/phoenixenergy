@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Careers - Phoenix Energy</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+      }
+      /* Updated Navbar Styles for Bold Links */
+      .nav-link {
+        font-size: 1rem;
+        font-weight: bold; /* Make the links bold */
+        color: #0f0101;
+        text-transform: uppercase; /* Optional: Make text uppercase */
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #007bff; /* Highlight on hover */
+      }
+      /* Header Section */
+      .header_section {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-brand img {
+        width: 150px;
+        height: auto;
+      }
+
+      .navbar-nav {
+        flex-direction: row;
+      }
+
+      .nav-item {
+        margin-left: 20px;
+      }
+
+      .nav-link {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #007bff;
+      }
+      .image_section {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px; /* Add spacing below the image section */
+      }
+
+      .image-container {
+        position: relative;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .image-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        background: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Dark overlay for better readability */
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .image-overlay h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      .image-overlay p {
+        font-size: 1.5rem;
+      }
+      /* Form Section */
+      .form_section {
+        background-color: #fff;
+        padding: 60px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        max-width: 800px;
+        margin: 40px auto;
+      }
+
+      .form_section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+
+      .form-control {
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background-color: #0056b3;
+      }
+
+      .file-upload {
+        border: 1px dashed #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        text-align: center;
+        color: #888;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+      }
+
+      .file-upload:hover {
+        border-color: #007bff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar">
+          <!-- Logo -->
+          <a class="navbar-brand" href="index.html">
+            <img src="images/company logo.png" alt="Phoenix Energy" />
+          </a>
+          <!-- Navigation -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="careers.html">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Careers.html">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="help.html">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signin.html">Sign In/Sign Up</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="image_section">
+      <div class="image-container">
+        <img
+          src="images/apply.jpg"
+          alt="Careers at Phoenix Energy"
+          class="img-fluid"
+        />
+        <div class="image-overlay">
+          <h1>Join Our Team</h1>
+          <p>Be a part of Phoenix Energy's growing family.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV Form Section -->
+    <section class="form_section">
+      <div class="container">
+        <h2>Apply with Your CV</h2>
+        <p class="text-center mb-4">
+          Join Phoenix Energy by submitting your details and CV. We look forward
+          to welcoming you to our team!
+        </p>
+        <form
+          action="submit_career_form.php"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-control"
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+
+          <!-- CV Upload -->
+          <div class="form-group">
+            <label for="cv">Upload Your CV</label>
+            <input
+              type="file"
+              id="cv"
+              name="cv"
+              class="form-control-file file-upload"
+              accept=".pdf, .doc, .docx"
+              required
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
