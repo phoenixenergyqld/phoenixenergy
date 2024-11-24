@@ -42,6 +42,12 @@
       }
 
       * Navbar Styles */
+      .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
   .navbar {
     display: flex;
     align-items: center;
@@ -82,6 +88,71 @@
   .navbar .menu a:hover {
     color: #007bff; /* Change color on hover */
   }
+  #about-section h2 {
+  text-transform: none;
+  font-size: 2rem; /* Adjust as needed */
+  font-weight: bold; /* Maintain bold appearance */
+  color: #333; /* Default color */
+}
+/* Hide the play button overlay in Chrome, Safari, and Edge */
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Hide the play button overlay in Firefox */
+video::-moz-play-button {
+    display: none !important;
+}
+
+  .video_section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.video_section video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Keeps the video behind overlay content */
+  object-fit: cover; /* Ensures the video scales without distortion */
+  background: black; /* Fallback background if video fails */
+}
+
+.video_section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(225, 205, 205, 0.3); /* Lighten the overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  z-index: 1; /* Ensures content appears above the video */
+}
+
+.video_section .overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.video_section .overlay p {
+  font-size: 1.5rem;
+}
+
+
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
@@ -99,6 +170,78 @@
       margin-bottom: 10px;
     }
   }
+  /* Typing Animation for Headings */
+.typing-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #007bff;
+  width: 0;
+  animation: typing 3s steps(30, end), blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Fade-in Animation for Paragraphs */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 1.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom-in Animation for Images */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoom-in 1.5s ease-out forwards;
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Add a delay to sync animations */
+.fade-in {
+  animation-delay: 3s; /* Delayed start after typing animation */
+}
+
+.zoom-in {
+  animation-delay: 3.5s; /* Slight delay for images */
+}
+
       /* Hero Section */
       .hero-section {
         position: relative;
@@ -160,74 +303,84 @@
             <a href="contact.html">Contact Us</a>
             <a href="careers.html">Careers</a>
             <a href="help.html">Help</a>
-            <a href="signin.html">Sign In/Sing Up </a>
+            <a href="signin.html">Sign In/Sign Up </a>
           </div>
         </div>
       </header>
+      
+      
+      
+          
+     
+      
+      
       <!-- Hero Section -->
-      <section class="hero-section">
-        <img src="images/team.jpeg" alt="Phoenix Energy Team" />
+       <section class="hero-section">
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+          <video autoplay muted loop playsinline style="display: block;">
+            <source src="video/services.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        
+      </div>
+      
+
+
+     <div>
+        
         <h1>AT PHOENIX ENERGY, WE ARE A TEAM.</h1>
         <p>
           We live by our values – relationships, agility, integrity, commitment,
           and equality.
         </p>
+        <br></br>
         <a href="team.html">Meet the Team</a>
+      </br></div>
       </section>
   
       <!-- Team Section -->
       
       <!-- end header section -->
     
-    <section class="about_section layout_padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-md-6">
-            <div class="detail-box">
-              
-              <h3>Our Vision</h3>
-              <p>
-                Phoenix Energy’s vision has consistently been centered around expansion, while upholding our commitment to superior
-workmanship and excellent customer relationships. Phoenix’s growth will be driven by the development of the
-businesses capabilities through pursuing challenging projects and positive staff engagement. Our leadership team,
-comprised of youthful directors, is perpetually driven by a desire for further growth and success of our team and
-business
-              </p>
-              
+      <section id="about-section" class="about_section layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+              <div class="detail-box">
+                <h2 id="about-heading"><h2>About Us</h2></h2>
+                <p class="fade-in">Phoenix Energy is a leading provider of innovative energy solutions, specializing in renewable energy, electrical, mechanical, and communications services. With a focus on sustainability and efficiency, we empower businesses and communities across Queensland to transition to cleaner, more reliable energy systems.</p>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-7 col-md-6">
-            <div class="img-box">
-              <img src="images/about-team.jpeg" alt="Phoenix Energy Team" />
+            <div class="col-lg-7 col-md-6">
+              <div class="img-box">
+                <img src="images/about-img.jpg" alt="About Us" class="zoom-in" />
+                
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    
-    
-    
-    <!-- about section -->
-
-    <section class="about_section layout_padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 col-md-6">
-            <div class="detail-box">
-              <h2>About us</h2>
-              <p>
-                Phoenix Energy is a leading provider of innovative energy solutions, specializing in renewable energy, electrical, mechanical, and communications services. With a focus on sustainability and efficiency, we empower businesses and communities across Queensland to transition to cleaner, more reliable energy systems. Our dedicated team combines expertise with cutting-edge technology to deliver tailored solutions that drive long-term success.
-              </p>
-              
+      </section>
+      
+      <section id="vision-section" class="vision_section layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-md-6">
+              <div class="detail-box">
+                <h2 id="vision-heading">Our Vision</h2>
+                <p class="fade-in">Phoenix Energy’s vision has consistently been centered around expansion, while upholding our commitment to superior workmanship and excellent customer relationships. Our growth is driven by pursuing challenging projects and positive staff engagement.</p>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-7 col-md-6">
-            <div class="img-box">
-              <img src="images/about-img.jpg" alt="" />
+            <div class="col-lg-7 col-md-6">
+              <div class="img-box">
+                <img src="images/contact2.jpg" alt="Our Vision" class="zoom-in" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      
+      
       
     </section>
     <div class="download-section">
@@ -300,7 +453,6 @@ business
     </section>
     
     
-
     <!-- end info_section -->
 
     <!-- footer section -->
@@ -314,49 +466,8 @@ business
     </footer>
     <!-- footer section -->
     <script>
-      function showDetails(projectId) {
-        // Hide all other details
-        document.querySelectorAll(".project_details").forEach((el) => {
-          el.style.display = "none";
-        });
-    
-        // Show the clicked project details
-        const projectDetails = document.getElementById(projectId);
-        if (projectDetails) {
-          projectDetails.style.display = "block";
-        }
-      }
+      
     </script>
     
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="js/custom.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-    <!-- End Google Map -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".clickable-image");
-        const contentBox = document.getElementById("content-box");
-        const dynamicContent = document.getElementById("dynamic-content");
-    
-        images.forEach((image) => {
-          image.addEventListener("click", function () {
-            const content = image.getAttribute("data-content");
-            dynamicContent.textContent = content;
-            contentBox.scrollIntoView({ behavior: "smooth" });
-          });
-        });
-      });
-    </script>
-    
-    <!-- Include Other Scripts -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="js/custom.js"></script>
-  </body>
-  
 </html>
 

@@ -45,6 +45,44 @@
     padding-left: 0; /* Remove left padding */
     padding-right: 0; /* Remove right padding */
 }
+/* Typing Animation */
+#typing-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  animation: typing 4s steps(30, end), blink-cursor 0.8s step-end infinite;
+}
+
+.cursor {
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+  display: inline-block;
+  animation: blink-cursor 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-cursor {
+  from {
+    border-right-color: white;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
 
  /* Add this CSS to make Sign In & Sign Up bold */
  .nav-link {
@@ -265,8 +303,15 @@ h1.slide-in-left {
     Your browser does not support the video tag.
   </video>
   <div class="overlay">
-    <h1>Welcome to Phoenix Energy</h1>
-    <p>Powering the Future with Innovation</p>
+    
+    
+      <h1>
+        <span id="typing-text"></span>
+        <span class="cursor">Phoenixenergy</span>
+      </h1>
+      <p>Powering the Future with Innovation</p>
+    </div>
+    
   </div>
 </div>
 <section class="slider_section">
@@ -414,6 +459,7 @@ h1.slide-in-left {
                 We Provide Professional <br />
                 Services.
               </h2>
+              <a href="service.html"> services  </a>
               <p>
                 Phoenix Energy provides certified  services across Queensland, specializing in design, installation, and maintenance for commercial and industrial projects. Fully licensed by the Queensland government, we deliver expert solutions in lighting, power systems, control integration, and emergency power, with a strong focus on safety, quality, and compliance.
               </p>

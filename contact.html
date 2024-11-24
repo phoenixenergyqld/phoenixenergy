@@ -63,6 +63,48 @@
         padding: 20px 0;
       }
 
+      /* Typing Animation for Heading */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        from {
+          border-right-color: rgba(255, 255, 255, 0.75);
+        }
+        to {
+          border-right-color: transparent;
+        }
+      }
+
+      /* Typing Effect */
+      h1.typing-effect {
+        font-size: 2.5rem;
+        color: #333;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid rgba(255, 255, 255, 0.75);
+        width: 100%;
+        animation: typing 4s steps(30, end), blink 0.7s step-end infinite;
+      }
+
+      /* Fade-In Effect */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       /* Contact Section */
       .contact-section {
         margin: 20px 0;
@@ -208,15 +250,15 @@
       />
     </div>
 
-    <!-- Page Heading -->
     <div class="content-section">
-      <h1>Contact Phoenix Energy</h1>
+      <!-- Typing Animation Heading -->
+      <h1 class="typing-effect">Contact Phoenix Energy</h1>
 
       <!-- Contact Section -->
       <div class="container">
         <div class="row contact-section">
           <!-- Contact Form -->
-          <div class="col-md-6">
+          <div class="col-md-6 fade-in">
             <div class="contact-form">
               <h2>Contact Us</h2>
               <form action="contact_form_handler.php" method="POST">
@@ -249,7 +291,7 @@
           </div>
 
           <!-- Google Map -->
-          <div class="col-md-6">
+          <div class="col-md-6 fade-in">
             <div class="map-container">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.675752253079!2d150.31598777540694!3d-28.549464263572165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ba31696dc258623%3A0x55b8dfd633e07e41!2sPhoenix%20Energy%20Qld!5e0!3m2!1sen!2sau!4v1732194881230!5m2!1sen!2sau"
@@ -263,7 +305,6 @@
         </div>
       </div>
     </div>
-
     <!-- Footer Section -->
     <footer class="footer_section">
       <div class="container text-center">
@@ -275,6 +316,28 @@
     </footer>
 
     <!-- Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add the fade-in effect when elements come into view
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 } // Trigger when 10% of the element is visible
+        );
+
+        // Observe elements with the fade-in class
+        document
+          .querySelectorAll(".fade-in")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>

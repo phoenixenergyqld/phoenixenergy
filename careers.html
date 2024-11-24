@@ -116,6 +116,46 @@
       .image-overlay p {
         font-size: 1.5rem;
       }
+      /* Typing Animation */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        from {
+          border-right-color: rgba(255, 255, 255, 0.75);
+        }
+        to {
+          border-right-color: transparent;
+        }
+      }
+
+      h1.typing-effect {
+        font-size: 3rem;
+        color: #fff;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid rgba(255, 255, 255, 0.75);
+        width: 100%;
+        animation: typing 4s steps(40, end), blink 0.8s step-end infinite;
+      }
+
+      /* Fade-In Animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
       /* Form Section */
       .form_section {
         background-color: #fff;
@@ -207,21 +247,22 @@
       </div>
     </header>
     <section class="image_section">
-      <div class="image-container">
+      <div class="image-container fade-in">
         <img
           src="images/apply.jpg"
           alt="Careers at Phoenix Energy"
           class="img-fluid"
         />
         <div class="image-overlay">
-          <h1>Join Our Team</h1>
+          <!-- Typing Animation -->
+          <h1 class="typing-effect">Join Our Team</h1>
           <p>Be a part of Phoenix Energy's growing family.</p>
         </div>
       </div>
     </section>
 
     <!-- CV Form Section -->
-    <section class="form_section">
+    <section class="form_section fade-in">
       <div class="container">
         <h2>Apply with Your CV</h2>
         <p class="text-center mb-4">
@@ -292,6 +333,28 @@
     </section>
 
     <!-- Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.2 } // Trigger when 20% of the element is visible
+        );
+
+        // Observe elements with fade-in class
+        document
+          .querySelectorAll(".fade-in")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
